@@ -9,3 +9,6 @@ train
 recognise
 test model with some changes according to our model requirement.
 
+<h1>miniproject_1</h1>
+Improvised the files and code
+implemented them into a single runnable py file
