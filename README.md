@@ -46,3 +46,7 @@ Started integrating the xls
                     1,
                     cv2.LINE_AA,
                 )
+                
+    
+<h2>inbulit directory locations</h2>
+faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
