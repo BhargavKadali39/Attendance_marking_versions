@@ -1,8 +1,9 @@
+import os
+from pathlib import Path
 from tkinter import *
 from tkinter.ttk import *
+
 import cv2
-from pathlib import Path
-import os
 import numpy as np
 from PIL import Image
 
@@ -23,7 +24,7 @@ root.geometry('400x400')
 #add all files as modules in here
 
 def Generate_The_DataSet():
-    faceCascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+    faceCascade = cv2.CascadeClassifier("D:\miniproject\miniproject_4\haarcascade_frontalface_default.xml")
 
     # Start the video camera
     vc = cv2.VideoCapture(0, cv2.CAP_DSHOW)
@@ -60,8 +61,10 @@ def Generate_The_DataSet():
         gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
         # Get the coordinates of the location of the face in the picture
-        faces = faceCascade.detectMultiScale(gray_img,scaleFactor=1.2,minNeighbors=5,minSize=(50, 50))
-
+        faces = faceCascade.detectMultiScale(gray_img,
+                                            scaleFactor=1.2,
+                                            minNeighbors=5,
+                                            minSize=(50, 50))
         # Draw a rectangle at the location of the coordinates
         for (x, y, w, h) in faces:
             cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
@@ -141,8 +144,8 @@ def Train_The_Model():
 
 
 
-def Face_Recognition():
-    faceCascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+def Face_Recognition():  # sourcery skip: use-fstring-for-concatenation
+    faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
     video_capture = cv2.VideoCapture(0, cv2.CAP_DSHOW)
     # Call the trained model yml file to recognize faces
     recognizer = cv2.face.LBPHFaceRecognizer_create()
