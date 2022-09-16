@@ -24,6 +24,9 @@ resolved some minor bugs for required modules and added comments
 <h1>miniproject_4</h1>
 Started integrating the xls 
 
+<h1>miniproject_5</h1>
+  Optimized the code and fixed the bugs.
+  Fixed the bug when id's are increased more than 9 i.e double digit like 10 11 are giving key error cos the work its doing is spilitting 10 to 1 as the index is given of [0]
 
 <h1>Other info</h1>
   <h2>Face recognition module issue</h2>
@@ -47,6 +50,8 @@ Started integrating the xls
                     cv2.LINE_AA,
                 )
                 
-    
+
+
+
 <h2>inbulit directory locations</h2>
 faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
